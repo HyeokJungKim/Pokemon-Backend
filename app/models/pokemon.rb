@@ -13,4 +13,8 @@ class Pokemon < ApplicationRecord
   def level(trainer)
     pokeballs.find{|pb| pb.trainer == trainer}.level
   end
+  
+  def experience(trainer)
+    pokeballs.find{|pb| pb.trainer == trainer}.experience
+  end
 end
