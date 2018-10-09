@@ -3,6 +3,6 @@ class TrainersController < ApplicationController
     @trainer = Trainer.find(params[:id])
     options = {include: [:pokemons]}
     trainer = TrainerSerializer.new(@trainer, options).serialized_json
-    render json: trainer
+    render json: trainer, scope: {trainer: @trainer}
   end
 end

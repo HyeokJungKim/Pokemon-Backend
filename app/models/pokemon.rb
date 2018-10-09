@@ -9,4 +9,8 @@ class Pokemon < ApplicationRecord
   def self.random
     all.sample
   end
+
+  def level(trainer)
+    pokeballs.find{|pb| pb.trainer == trainer}.level
+  end
 end
