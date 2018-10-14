@@ -1,6 +1,6 @@
 class PokemonSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :type_1, :type_2, :image
+  attributes :id, :name, :type_1, :type_2, :image
 
   attribute :level do |pokemon, params|
     pokemon.level(params[:trainer])

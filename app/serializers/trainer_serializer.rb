@@ -1,5 +1,5 @@
 class TrainerSerializer
   include FastJsonapi::ObjectSerializer
   has_many :pokemons
-  attributes :username, :money
+  attributes :id, :username, :money
 end
