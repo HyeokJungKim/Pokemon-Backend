@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :trainers, only: [:show]
+  get '/trainers/persist', to: 'trainers#persist'
   post '/login', to: 'trainers#login'
+  resources :trainers, only: [:show]
 end

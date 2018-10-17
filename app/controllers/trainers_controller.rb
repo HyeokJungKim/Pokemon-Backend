@@ -1,20 +1,39 @@
 class TrainersController < ApplicationController
-  def show
-    @trainer = Trainer.find(params[:id])
-    options = {include: [:pokemons], params: {trainer: @trainer}}
-    trainer = TrainerSerializer.new(@trainer, options).serialized_json
-    render json: trainer
+  def login
+    @trainer = Trainer.find_by(username: trainer_params(:username))
+    if(@trainer && @trainer.authenticate(trainer_params(:password)))
+      render json: tokenForAccount(@trainer)
+    else
+      render json: {error: "Invalid Username or Password"}, status: :bad_request
+    end
   end
 
-
-  def login
-    @trainer = Trainer.find_by(username: params[:username])
-    if(@trainer && @trainer.authenticate(params[:password]))
+  def persist
+    id = getIdFromToken
+    if(id)
+      @trainer = Trainer.find(id)
       options = {include: [:pokemons], params: {trainer: @trainer}}
       trainer = TrainerSerializer.new(@trainer, options).serialized_json
       render json: trainer
     else
-      render json: {error: "Invalid Username or Password"}
+      render json: {error: "Invalid Token"}, status: :bad_request
     end
+  end
+
+  def show
+    @trainer = Trainer.find(params[:id])
+    if(authorized?(@trainer))
+      options = {include: [:pokemons], params: {trainer: @trainer}}
+      trainer = TrainerSerializer.new(@trainer, options).serialized_json
+      render json: trainer
+    else
+      render json: {error: "Invalid Token"}, status: :bad_request
+    end
+  end
+
+  private
+
+  def trainer_params(*args)
+    params.require(:trainer).permit(*args)[*args]
   end
 end
