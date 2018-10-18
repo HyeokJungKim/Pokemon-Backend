@@ -804,6 +804,7 @@ Pokemon.create([
    ])
 
 eric = Trainer.create(username:"eric", password:"123", money: 10000)
+Family.create(pokemon_id: 1, evolution_id: 2)
 Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
 Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
 Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
