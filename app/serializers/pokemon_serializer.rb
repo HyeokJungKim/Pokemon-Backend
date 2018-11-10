@@ -3,7 +3,9 @@ class PokemonSerializer
   attributes :id, :name, :type_1, :type_2, :image
 
   attribute :level do |pokemon, params|
-    pokemon.level(params[:trainer])
+    if(params)
+      pokemon.level(params[:trainer])
+    end
   end
 
   # attribute :experience do |pokemon, params|

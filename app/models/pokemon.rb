@@ -2,8 +2,8 @@ class Pokemon < ApplicationRecord
   has_many :pokeballs
   has_many :trainers, through: :pokeballs
 
-  has_many :pokemon_evolutions, class_name: "Family"
-  has_many :evolutions, through: :pokemon_evolutions, source: :evolution
+  has_many :families
+  has_many :evolutions, through: :families, source: :evolution
 
   def image
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/#{self.pokedex_id}.png"

@@ -81,7 +81,7 @@ Pokemon.create([
   {name: "Slowbro", pokedex_id: 80, type_1: "psychic", type_2: "water"},
   {name: "Magnemite", pokedex_id: 81, type_1: "steel", type_2: "electric"},
   {name: "Magneton", pokedex_id: 82, type_1: "steel", type_2: "electric"},
-  {name: "Farfetchd", pokedex_id: 83, type_1: "flying", type_2: "normal"},
+  {name: "Farfetch'd", pokedex_id: 83, type_1: "flying", type_2: "normal"},
   {name: "Doduo", pokedex_id: 84, type_1: "flying", type_2: "normal"},
   {name: "Dodrio", pokedex_id: 85, type_1: "flying", type_2: "normal"},
   {name: "Seel", pokedex_id: 86, type_1: "water", type_2: nil},
@@ -120,7 +120,7 @@ Pokemon.create([
   {name: "Seaking", pokedex_id: 119, type_1: "water", type_2: nil},
   {name: "Staryu", pokedex_id: 120, type_1: "water", type_2: nil},
   {name: "Starmie", pokedex_id: 121, type_1: "psychic", type_2: "water"},
-  {name: "Mr Mime", pokedex_id: 122, type_1: "fairy", type_2: "psychic"},
+  {name: "Mr.Mime", pokedex_id: 122, type_1: "fairy", type_2: "psychic"},
   {name: "Scyther", pokedex_id: 123, type_1: "flying", type_2: "bug"},
   {name: "Jynx", pokedex_id: 124, type_1: "psychic", type_2: "ice"},
   {name: "Electabuzz", pokedex_id: 125, type_1: "electric", type_2: nil},
@@ -804,7 +804,98 @@ Pokemon.create([
    ])
 
 eric = Trainer.create(username:"eric", password:"123", money: 10000)
-Family.create(pokemon_id: 1, evolution_id: 2)
+
+  # -1 Thunder Stone
+  # -2 Moon Stone
+  # -3 Fire Stone
+  # -4 Leaf Stone
+  # -5 Water Stone
+  # -6 Trade
+
+Family.create([
+  {pokemon_id: 1, evolution_id: 2, level: 18},
+  {pokemon_id: 2, evolution_id: 3, level: 32},
+  {pokemon_id: 4, evolution_id: 5, level: 16},
+  {pokemon_id: 5, evolution_id: 6, level: 36},
+  {pokemon_id: 7, evolution_id: 8, level: 18},
+  {pokemon_id: 8, evolution_id: 9, level: 36},
+  {pokemon_id: 10, evolution_id: 11, level: 7},
+  {pokemon_id: 11, evolution_id: 12, level: 10},
+  {pokemon_id: 13, evolution_id: 14, level: 7},
+  {pokemon_id: 14, evolution_id: 15, level: 10},
+  {pokemon_id: 16, evolution_id: 17, level: 18},
+  {pokemon_id: 17, evolution_id: 18, level: 36},
+  {pokemon_id: 19, evolution_id: 20, level: 20},
+  {pokemon_id: 21, evolution_id: 22, level: 20},
+  {pokemon_id: 23, evolution_id: 24, level: 22},
+  {pokemon_id: 25, evolution_id: 26, level: -1},
+  {pokemon_id: 27, evolution_id: 28, level: 22},
+  {pokemon_id: 29, evolution_id: 30, level: 16},
+  {pokemon_id: 30, evolution_id: 31, level: -2},
+  {pokemon_id: 32, evolution_id: 33, level: 16},
+  {pokemon_id: 33, evolution_id: 34, level: -2},
+  {pokemon_id: 35, evolution_id: 36, level: -2},
+  {pokemon_id: 37, evolution_id: 38, level: -3},
+  {pokemon_id: 39, evolution_id: 40, level: -2},
+  {pokemon_id: 41, evolution_id: 42, level: 22},
+  {pokemon_id: 43, evolution_id: 44, level: 21},
+  {pokemon_id: 44, evolution_id: 45, level: -4},
+  {pokemon_id: 46, evolution_id: 47, level: 24},
+  {pokemon_id: 48, evolution_id: 49, level: 31},
+  {pokemon_id: 50, evolution_id: 51, level: 26},
+  {pokemon_id: 52, evolution_id: 53, level: 28},
+  {pokemon_id: 54, evolution_id: 55, level: 33},
+  {pokemon_id: 56, evolution_id: 57, level: 28},
+  {pokemon_id: 58, evolution_id: 59, level: -3},
+  {pokemon_id: 60, evolution_id: 61, level: 25},
+  {pokemon_id: 61, evolution_id: 62, level: -5},
+  {pokemon_id: 63, evolution_id: 64, level: 16},
+  {pokemon_id: 64, evolution_id: 65, level: -6},
+  {pokemon_id: 66, evolution_id: 67, level: 28},
+  {pokemon_id: 67, evolution_id: 68, level: -6},
+  {pokemon_id: 69, evolution_id: 70, level: 21},
+  {pokemon_id: 70, evolution_id: 71, level: -4},
+  {pokemon_id: 74, evolution_id: 75, level: 25},
+  {pokemon_id: 75, evolution_id: 76, level: -6},
+  {pokemon_id: 77, evolution_id: 78, level: 40},
+  {pokemon_id: 79, evolution_id: 80, level: 37},
+  {pokemon_id: 81, evolution_id: 82, level: 30},
+  {pokemon_id: 84, evolution_id: 85, level: 31},
+  {pokemon_id: 86, evolution_id: 87, level: 34},
+  {pokemon_id: 88, evolution_id: 89, level: 38},
+  {pokemon_id: 90, evolution_id: 91, level: -5},
+  {pokemon_id: 92, evolution_id: 93, level: 25},
+  {pokemon_id: 93, evolution_id: 94, level: -6},
+  {pokemon_id: 96, evolution_id: 97, level: 26},
+  {pokemon_id: 98, evolution_id: 99, level: 28},
+  {pokemon_id: 100, evolution_id: 101, level: 30},
+  {pokemon_id: 102, evolution_id: 103, level: -4},
+  {pokemon_id: 104, evolution_id: 105, level: 28},
+  {pokemon_id: 109, evolution_id: 110, level: 35},
+  {pokemon_id: 111, evolution_id: 112, level: 42},
+  {pokemon_id: 116, evolution_id: 117, level: 32},
+  {pokemon_id: 118, evolution_id: 119, level: 33},
+  {pokemon_id: 120, evolution_id: 121, level: -5},
+  {pokemon_id: 129, evolution_id: 130, level: 20},
+  {pokemon_id: 133, evolution_id: 134, level: -5},
+  {pokemon_id: 133, evolution_id: 135, level: -1},
+  {pokemon_id: 133, evolution_id: 136, level: -3},
+  {pokemon_id: 138, evolution_id: 139, level: 40},
+  {pokemon_id: 140, evolution_id: 141, level: 40},
+  {pokemon_id: 147, evolution_id: 148, level: 30},
+  {pokemon_id: 148, evolution_id: 149, level: 55}
+])
+
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
 Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
 Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
 Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
