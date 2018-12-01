@@ -9,9 +9,9 @@ class TrainersController < ApplicationController
   end
 
   def persist
-    id = getIdFromToken
-    if(id)
-      @trainer = Trainer.find(id)
+    @trainer = currentUser
+    if(@trainer)
+      @trainer = currentUser
       options = {include: [:pokemons], params: {trainer: @trainer}}
       trainer = TrainerSerializer.new(@trainer, options).serialized_json
       render json: trainer
@@ -21,11 +21,24 @@ class TrainersController < ApplicationController
   end
 
   def show
-    @trainer = Trainer.find(params[:id])
-    if(authorized?(@trainer))
+    @trainer = currentUser
+    if(@trainer)
       options = {include: [:pokemons], params: {trainer: @trainer}}
       trainer = TrainerSerializer.new(@trainer, options).serialized_json
       render json: trainer
+    else
+      render json: {error: "Invalid Token"}, status: :bad_request
+    end
+  end
+
+  def catch
+    @trainer = currentUser
+    if(@trainer)
+      @pokemon = Pokemon.find(params[:id])
+      Pokeball.create(trainer: @trainer, pokemon: @pokemon, level: params[:level])
+      options = {params: {trainer: @trainer}}
+      pokemon = PokemonSerializer.new(@pokemon, options)
+      render json: pokemon
     else
       render json: {error: "Invalid Token"}, status: :bad_request
     end

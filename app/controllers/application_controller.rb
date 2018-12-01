@@ -32,6 +32,15 @@ class ApplicationController < ActionController::API
     decoded[0]['id']
   end
 
+  def currentUser
+    id = getIdFromToken
+    if !!id
+      return Trainer.find(id)
+    else
+      return nil
+    end
+  end
+
   def authorized?(trainer)
     getIdFromToken == trainer.id
   end
