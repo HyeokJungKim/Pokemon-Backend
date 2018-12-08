@@ -1,4 +1,11 @@
 class TrainersController < ApplicationController
+  before_action :check_token, except: [:login]
+
+  def check_token
+    @trainer = currentUser
+    render json: {error: "Invalid Token"} unless !!@trainer
+  end
+
   def login
     @trainer = Trainer.find_by(username: trainer_params(:username))
     if(@trainer && @trainer.authenticate(trainer_params(:password)))
@@ -9,37 +16,21 @@ class TrainersController < ApplicationController
   end
 
   def persist
-    @trainer = currentUser
-    if(@trainer)
-      options = {include: [:pokeballs]}
-      trainer = TrainerSerializer.new(@trainer, options).serialized_json
-      render json: trainer
-    else
-      render json: {error: "Invalid Token"}, status: :bad_request
-    end
+    options = {include: [:pokeballs]}
+    trainer = TrainerSerializer.new(@trainer, options).serialized_json
+    render json: trainer
   end
 
   def show
-    @trainer = currentUser
-    if(@trainer)
-      options = {include: [:pokeballs]}
-      trainer = TrainerSerializer.new(@trainer, options).serialized_json
-      render json: trainer
-    else
-      render json: {error: "Invalid Token"}, status: :bad_request
-    end
+    options = {include: [:pokeballs]}
+    render json: TrainerSerializer.new(@trainer, options).serialized_json
   end
 
   def catch
-    @trainer = currentUser
-    if(@trainer)
-      @pokemon = Pokemon.find(params[:id])
-      @pokeball = Pokeball.create(trainer: @trainer, pokemon: @pokemon, level: params[:level])
-      pokemon = PokeballSerializer.new(@pokeball)
-      render json: pokemon
-    else
-      render json: {error: "Invalid Token"}, status: :bad_request
-    end
+    # TODO: Add experience to each of the Pokemon
+    @pokemon = Pokemon.find(params[:id])
+    @pokeball = Pokeball.create(trainer: @trainer, pokemon: @pokemon, level: params[:level])
+    render json: PokeballSerializer.new(@pokeball)
   end
 
   private

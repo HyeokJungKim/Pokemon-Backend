@@ -7,4 +7,13 @@ class Pokeball < ApplicationRecord
     hash.delete("pokedex_id")
     hash
   end
+
+  def add_experience(num)
+    self.experience += num
+    if self.experience > self.level * 25
+      self.level += 1
+      self.experience = 0
+    end
+    self.save
+  end
 end

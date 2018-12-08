@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_10_17_235225) do
 
   create_table "pokeballs", force: :cascade do |t|
     t.integer "level"
-    t.integer "experience"
+    t.integer "experience", default: 0
     t.bigint "trainer_id"
     t.bigint "pokemon_id"
     t.index ["pokemon_id"], name: "index_pokeballs_on_pokemon_id"
