@@ -17,8 +17,7 @@ class TrainersController < ApplicationController
 
   def persist
     options = {include: [:pokeballs]}
-    trainer = TrainerSerializer.new(@trainer, options).serialized_json
-    render json: trainer
+    render json: TrainerSerializer.new(@trainer, options).serialized_json
   end
 
   def show
@@ -29,6 +28,7 @@ class TrainersController < ApplicationController
   def catch
     # TODO: Add experience to each of the Pokemon
     @pokemon = Pokemon.find(params[:id])
+    @trainer.pokeballs.each {|pokeball| pokeball.add_experience(params[:experience])}
     @pokeball = Pokeball.create(trainer: @trainer, pokemon: @pokemon, level: params[:level])
     render json: PokeballSerializer.new(@pokeball)
   end
