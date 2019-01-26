@@ -3,7 +3,7 @@ class Pokeball < ApplicationRecord
   belongs_to :trainer
 
   def pokemon_information
-    hash = self.pokemon.attributes.merge({level: self.level, experience: self.experience, image: pokemon.image})
+    hash = self.pokemon.attributes.merge({id: self.id, level: self.level, experience: self.experience, image: self.pokemon.image, team_number: self.team_number})
     hash.delete("pokedex_id")
     hash
   end

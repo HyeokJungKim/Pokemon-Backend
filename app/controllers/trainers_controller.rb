@@ -28,8 +28,10 @@ class TrainersController < ApplicationController
   def catch
     # TODO: Add experience to each of the Pokemon
     @pokemon = Pokemon.find(params[:id])
-    @trainer.pokeballs.each {|pokeball| pokeball.add_experience(params[:experience])}
-    @pokeball = Pokeball.create(trainer: @trainer, pokemon: @pokemon, level: params[:level])
+    @trainer.pokeballs[0..5].each {|pokeball| pokeball.add_experience(params[:experience])}
+    @team_number = @trainer.highest_team_number
+    @team_number += 1
+    @pokeball = Pokeball.create(trainer: @trainer, pokemon: @pokemon, level: params[:level], team_number: @team_number)
     render json: PokeballSerializer.new(@pokeball)
   end
 

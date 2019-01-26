@@ -886,8 +886,8 @@ Family.create([
   {pokemon_id: 148, evolution_id: 149, level: 55}
 ])
 
-Pokeball.create(trainer: eric, pokemon_id: 2, level: rand(1..100))
-Pokeball.create(trainer: eric, pokemon_id: 2, level: rand(1..100))
-Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
-Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
-Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100))
+Pokeball.create(trainer: eric, pokemon_id: 2, level: rand(1..100), team_number: 1)
+Pokeball.create(trainer: eric, pokemon_id: 2, level: rand(1..100), team_number: 2)
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100), team_number: 3)
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100), team_number: 4)
+Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100), team_number: 5)
