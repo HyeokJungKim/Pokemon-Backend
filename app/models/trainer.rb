@@ -6,4 +6,8 @@ class Trainer < ApplicationRecord
   def highest_team_number
     pokeballs.max_by(&:team_number).team_number
   end
+
+  def pokemon_team
+    pokeballs.where(onTeam: true)
+  end
 end

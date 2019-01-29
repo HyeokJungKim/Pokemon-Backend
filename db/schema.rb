@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_26_224228) do
+ActiveRecord::Schema.define(version: 2019_01_29_002926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_01_26_224228) do
     t.bigint "trainer_id"
     t.bigint "pokemon_id"
     t.integer "team_number"
+    t.boolean "onTeam", default: false
     t.index ["pokemon_id"], name: "index_pokeballs_on_pokemon_id"
     t.index ["trainer_id"], name: "index_pokeballs_on_trainer_id"
   end
