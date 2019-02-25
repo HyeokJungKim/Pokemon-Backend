@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_01_29_002926) do
     t.integer "experience", default: 0
     t.bigint "trainer_id"
     t.bigint "pokemon_id"
-    t.integer "team_number"
+    t.integer "position"
     t.boolean "onTeam", default: false
     t.index ["pokemon_id"], name: "index_pokeballs_on_pokemon_id"
     t.index ["trainer_id"], name: "index_pokeballs_on_trainer_id"

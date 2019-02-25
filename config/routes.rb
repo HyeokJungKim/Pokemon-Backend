@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post '/catch/:id', to: 'trainers#catch'
   resources :trainers, only: [:show]
   resources :pokemons, only: [:index]
+  resources :pokeballs, only: [:update]
 end

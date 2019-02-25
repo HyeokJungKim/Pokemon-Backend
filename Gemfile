@@ -5,6 +5,7 @@ ruby '2.3.3'
 gem 'fast_jsonapi'
 gem 'dotenv-rails'
 gem 'jwt'
+gem 'acts_as_list'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'

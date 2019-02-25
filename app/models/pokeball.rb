@@ -1,6 +1,7 @@
 class Pokeball < ApplicationRecord
   belongs_to :pokemon
   belongs_to :trainer
+  acts_as_list scope: :trainer
 
   def pokemon_information
     hash = self.pokemon.attributes.merge(self.attributes)

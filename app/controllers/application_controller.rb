@@ -44,4 +44,9 @@ class ApplicationController < ActionController::API
   def authorized?(trainer)
     getIdFromToken == trainer.id
   end
+
+  def check_token
+    @trainer = currentUser
+    render json: {error: "Invalid Token"} unless !!@trainer
+  end
 end
