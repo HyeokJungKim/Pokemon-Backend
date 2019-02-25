@@ -3,8 +3,13 @@ class PokeballsController < ApplicationController
 
   def update
     @pokeball = Pokeball.find(params[:id])
-    @pokeball.update(pokeball_params.merge(onTeam: !@pokeball.onTeam))
-    render json: PokeballSerializer.new(@pokeball)
+    if params[:moveAcross]
+      @pokeball.update(pokeball_params.merge(onTeam: !@pokeball.onTeam))
+    else
+      @pokeball.update(pokeball_params)
+    end
+    options = {include: [:pokeballs]}
+    render json: TrainerSerializer.new(@trainer, options).serialized_json
   end
 
   private

@@ -886,10 +886,10 @@ Family.create([
   {pokemon_id: 148, evolution_id: 149, level: 55}
 ])
 
-Pokeball.create(trainer: eric, pokemon_id: 2, level: rand(1..100), position: 1, onTeam: true)
-Pokeball.create(trainer: eric, pokemon_id: 2, level: rand(1..100), position: 2, onTeam: true)
-Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100), position: 3, onTeam: true)
-Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100), position: 4, onTeam: true)
-Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100), position: 5, onTeam: true)
-Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100), position: 6, onTeam: true)
-Pokeball.create(trainer: eric, pokemon_id: rand(1..151), level: rand(1..100), position: 7)
+Pokeball.create(trainer: eric, pokemon_id: 1, level: 1, position: 1, onTeam: true)
+Pokeball.create(trainer: eric, pokemon_id: 1, level: 2, position: 2, onTeam: true)
+Pokeball.create(trainer: eric, pokemon_id: 2, level: rand(1..100), position: 3, onTeam: true)
+Pokeball.create(trainer: eric, pokemon_id: 3, level: rand(1..100), position: 4, onTeam: true)
+Pokeball.create(trainer: eric, pokemon_id: 4, level: rand(1..100), position: 5, onTeam: true)
+Pokeball.create(trainer: eric, pokemon_id: 5, level: rand(1..100), position: 6, onTeam: true)
+Pokeball.create(trainer: eric, pokemon_id: 6, level: rand(1..100), position: 7)
