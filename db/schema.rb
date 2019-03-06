@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2019_01_29_002926) do
     t.integer "pokemon_id"
     t.integer "evolution_id"
     t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pokeballs", force: :cascade do |t|
@@ -26,6 +28,8 @@ ActiveRecord::Schema.define(version: 2019_01_29_002926) do
     t.integer "experience", default: 0
     t.bigint "trainer_id"
     t.bigint "pokemon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "position"
     t.boolean "onTeam", default: false
     t.index ["pokemon_id"], name: "index_pokeballs_on_pokemon_id"
@@ -37,12 +41,16 @@ ActiveRecord::Schema.define(version: 2019_01_29_002926) do
     t.integer "pokedex_id"
     t.string "type_1"
     t.string "type_2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "trainers", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
     t.integer "money"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "pokeballs", "pokemons"

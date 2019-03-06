@@ -6,6 +6,7 @@ class CreatePokeballs < ActiveRecord::Migration[5.2]
       t.references :trainer, index: true, foreign_key: true
       t.references :pokemon, index: true, foreign_key: true
 
+      t.timestamps
     end
   end
 end

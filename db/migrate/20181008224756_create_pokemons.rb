@@ -6,6 +6,7 @@ class CreatePokemons < ActiveRecord::Migration[5.2]
       t.string :type_1
       t.string :type_2
 
+      t.timestamps
     end
   end
 end

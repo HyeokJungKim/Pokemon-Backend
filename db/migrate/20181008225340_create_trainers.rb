@@ -5,6 +5,7 @@ class CreateTrainers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.integer :money
 
+      t.timestamps
     end
   end
 end

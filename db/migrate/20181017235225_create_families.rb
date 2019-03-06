@@ -5,6 +5,7 @@ class CreateFamilies < ActiveRecord::Migration[5.2]
       t.integer :evolution_id
       t.integer :level
 
+      t.timestamps
     end
   end
 end

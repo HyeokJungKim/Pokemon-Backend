@@ -1,6 +1,9 @@
 class PokemonsController < ApplicationController
   def index
     @pokemons = Pokemon.all
-    render json: PokemonSerializer.new(@pokemons).serialized_json
+    json = Rails.cache.fetch("pokemons") do
+      PokemonSerializer.new(@pokemons).serialized_json
+    end
+    render json: json
   end
 end
