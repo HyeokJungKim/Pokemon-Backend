@@ -8,6 +8,8 @@ class Pokeball < ApplicationRecord
     hash.delete("pokedex_id")
     hash.delete("pokemon_id")
     hash.delete("trainer_id")
+    hash.delete("created_at")
+    hash.delete("updated_at")
     hash.merge({image: self.pokemon.image})
   end
 
@@ -18,5 +20,9 @@ class Pokeball < ApplicationRecord
       self.experience = 0
     end
     self.save
+  end
+
+  def can_evolve?
+    self.pokemon.evolutions.first && self.level > self.pokemon.families.first.level 
   end
 end

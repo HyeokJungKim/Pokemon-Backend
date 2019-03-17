@@ -9,4 +9,12 @@ class Pokemon < ApplicationRecord
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/#{self.pokedex_id}.png"
   end
 
+  def evolutionLevel
+    if !self.families.exists?
+      return 0
+    else
+      return self.families[0].level
+    end
+  end
+
 end
