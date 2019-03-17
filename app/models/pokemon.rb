@@ -6,7 +6,7 @@ class Pokemon < ApplicationRecord
   has_many :evolutions, through: :families, source: :evolution
 
   def image
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/#{self.pokedex_id}.png"
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/#{self.id}.png"
   end
 
   def evolutionLevel

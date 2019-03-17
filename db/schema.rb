@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_29_002926) do
+ActiveRecord::Schema.define(version: 2019_03_17_191410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,25 @@ ActiveRecord::Schema.define(version: 2019_01_29_002926) do
     t.integer "pokemon_id"
     t.integer "evolution_id"
     t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "inventories", force: :cascade do |t|
+    t.bigint "trainer_id"
+    t.bigint "item_id"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_inventories_on_item_id"
+    t.index ["trainer_id"], name: "index_inventories_on_trainer_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "price"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,7 +57,6 @@ ActiveRecord::Schema.define(version: 2019_01_29_002926) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
-    t.integer "pokedex_id"
     t.string "type_1"
     t.string "type_2"
     t.datetime "created_at", null: false
@@ -53,6 +71,8 @@ ActiveRecord::Schema.define(version: 2019_01_29_002926) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "inventories", "items"
+  add_foreign_key "inventories", "trainers"
   add_foreign_key "pokeballs", "pokemons"
   add_foreign_key "pokeballs", "trainers"
 end

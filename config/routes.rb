@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :trainers, only: [:show]
   resources :pokemons, only: [:index]
   resources :pokeballs, only: [:update]
+  resources :items, only: [:index]
 end
