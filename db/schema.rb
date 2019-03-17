@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_03_17_191410) do
   create_table "inventories", force: :cascade do |t|
     t.bigint "trainer_id"
     t.bigint "item_id"
-    t.integer "quantity"
+    t.integer "quantity", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_inventories_on_item_id"
