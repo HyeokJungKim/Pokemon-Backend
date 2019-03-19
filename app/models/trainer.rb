@@ -3,9 +3,9 @@ class Trainer < ApplicationRecord
   has_many :pokeballs, -> { order(position: :asc) }
   has_many :pokemons, through: :pokeballs
 
-  has_many :inventories
+  has_many :inventories, -> { order(id: :asc) }
   has_many :items, through: :inventories
-  
+
   def pokemon_team
     pokeballs.where(onTeam: true)
   end

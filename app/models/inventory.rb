@@ -10,4 +10,9 @@ class Inventory < ApplicationRecord
     hash.delete("updated_at")
     hash
   end
+
+  def buy(num)
+    self.increment!(:quantity, num)
+    self.trainer.decrement!(:money, num * self.item.price)
+  end
 end
