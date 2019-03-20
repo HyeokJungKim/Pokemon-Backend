@@ -803,7 +803,7 @@ Pokemon.create([
   #{name: "Marshadow", type_1: "Ghost", type_2: "Fighting"}
    ])
 
-eric = Trainer.create(username:"eric", password:"123", money: 10000)
+eric = Trainer.create(username:"eric", password:"123", money: 50000)
 
   # -1 Thunder Stone
   # -2 Moon Stone

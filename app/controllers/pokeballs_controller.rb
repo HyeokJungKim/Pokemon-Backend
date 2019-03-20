@@ -8,6 +8,7 @@ class PokeballsController < ApplicationController
     else
       @pokeball.update(pokeball_params)
     end
+    @trainer.update_order
     options = {include: [:pokeballs]}
     render json: TrainerSerializer.new(@trainer, options).serialized_json
   end
