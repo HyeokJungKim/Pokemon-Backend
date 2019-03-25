@@ -22,6 +22,8 @@ class TrainersController < ApplicationController
 
   def catch
     @pokemon = Pokemon.find(params[:id])
+    @ball = @trainer.inventories.find_by(id: params["ballId"])
+    @ball.use(1)
     @trainer.pokemon_team.each {|pokeball| pokeball.add_experience(params[:experience])}
     @pokeball = Pokeball.create(trainer: @trainer, pokemon: @pokemon, level: params[:level], onTeam: params[:canFitOnTeam])
     render json: PokeballSerializer.new(@pokeball)

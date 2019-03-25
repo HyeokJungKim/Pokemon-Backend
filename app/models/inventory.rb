@@ -15,4 +15,8 @@ class Inventory < ApplicationRecord
     self.increment!(:quantity, num)
     self.trainer.decrement!(:money, num * self.item.price)
   end
+
+  def use(num)
+    self.decrement!(:quantity, num)
+  end
 end
