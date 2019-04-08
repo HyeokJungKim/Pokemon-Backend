@@ -21,4 +21,9 @@ class Trainer < ApplicationRecord
       pokemon.update(position: index)
     end
   end
+
+  def increase_money(amount)
+    self.increment!(:money, amount)
+  end
+
 end
