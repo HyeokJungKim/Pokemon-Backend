@@ -6,6 +6,8 @@ class Trainer < ApplicationRecord
   has_many :inventories, -> { order(id: :asc) }
   has_many :items, through: :inventories
 
+  after_create :set_inventory
+
   def pokemon_team
     pokeballs.where(onTeam: true)
   end
@@ -26,4 +28,11 @@ class Trainer < ApplicationRecord
     self.increment!(:money, amount)
   end
 
+  private
+  
+  def set_inventory
+    Item.all.each do |item|
+      Inventory.create(trainer: self, item: item, quantity: 5))
+    end
+  end
 end

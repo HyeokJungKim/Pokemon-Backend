@@ -855,6 +855,7 @@ Family.create([
   {pokemon_id: 67, evolution_id: 68, level: -6},
   {pokemon_id: 69, evolution_id: 70, level: 21},
   {pokemon_id: 70, evolution_id: 71, level: -4},
+  {pokemon_id: 72, evolution_id: 73, level: 30},
   {pokemon_id: 74, evolution_id: 75, level: 25},
   {pokemon_id: 75, evolution_id: 76, level: -6},
   {pokemon_id: 77, evolution_id: 78, level: 40},
