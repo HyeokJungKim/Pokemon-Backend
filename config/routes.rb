@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/catch/:id', to: 'trainers#catch'
   patch '/pokeballs/:id/evolve', to: 'pokeballs#evolve'
   patch '/inventories', to: 'inventories#buy'
+  get "/test", to: 'trainers#test'
   resources :trainers, only: [:show]
   resources :pokemons, only: [:index]
   resources :pokeballs, only: [:update]

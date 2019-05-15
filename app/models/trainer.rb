@@ -29,10 +29,10 @@ class Trainer < ApplicationRecord
   end
 
   private
-  
+
   def set_inventory
     Item.all.each do |item|
-      Inventory.create(trainer: self, item: item, quantity: 5))
+      Inventory.create(trainer: self, item: item, quantity: 5)
     end
   end
 end
