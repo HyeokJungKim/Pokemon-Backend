@@ -30,6 +30,13 @@ class TrainersController < ApplicationController
     render json: PokeballSerializer.new(@pokeball)
   end
 
+  def experience
+    @trainer.increase_money(params[:money])
+    @trainer.pokemon_team.each {|pokeball| pokeball.add_experience(params[:experience])}
+    options = {include: [:pokeballs]}
+    render json: TrainerSerializer.new(@trainer, options).serialized_json
+  end
+
   private
 
   def trainer_params(*args)
