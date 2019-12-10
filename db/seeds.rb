@@ -888,13 +888,13 @@ Family.create([
 ])
 
 Pokeball.create([
-  {trainer: eric, pokemon_id: rand(1..151), level: 1, position: 1, onTeam: true},
-  {trainer: eric, pokemon_id: rand(1..151), level: 2, position: 2, onTeam: true},
-  {trainer: eric, pokemon_id: rand(1..151), level: 90, position: 3, onTeam: true},
-  {trainer: eric, pokemon_id: rand(1..151), level: 90, position: 4, onTeam: true},
-  {trainer: eric, pokemon_id: rand(1..151), level: 90, position: 5, onTeam: true},
-  {trainer: eric, pokemon_id: rand(1..151), level: 90, position: 6, onTeam: true},
-  {trainer: eric, pokemon_id: rand(1..151), level: 90, position: 7}
+  {trainer: eric, pokemon_id: 44, level: 1, position: 1, onTeam: true},
+  {trainer: eric, pokemon_id: 25, level: 2, position: 2, onTeam: true},
+  {trainer: eric, pokemon_id: 30, level: 90, position: 3, onTeam: true},
+  {trainer: eric, pokemon_id: 120, level: 90, position: 4, onTeam: true},
+  {trainer: eric, pokemon_id: 133, level: 90, position: 5, onTeam: true},
+  {trainer: eric, pokemon_id: 133, level: 90, position: 6, onTeam: true},
+  {trainer: eric, pokemon_id: 93, level: 90, position: 7}
 ])
 
 Item.create([

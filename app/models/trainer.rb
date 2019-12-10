@@ -1,9 +1,9 @@
 class Trainer < ApplicationRecord
   has_secure_password
-  has_many :pokeballs, -> { order(position: :asc) }
+  has_many :pokeballs, -> { order(position: :asc) }, dependent: :delete_all
   has_many :pokemons, through: :pokeballs
 
-  has_many :inventories, -> { order(id: :asc) }
+  has_many :inventories, -> { order(id: :asc) }, dependent: :delete_all
   has_many :items, through: :inventories
 
   after_create :set_inventory
