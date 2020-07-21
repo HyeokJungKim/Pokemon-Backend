@@ -902,13 +902,13 @@ Item.create([
   {name: "Great Ball", description: "A good, high-performance Ball that provides a higher Pokémon catch rate than a standard Poké Ball.", price: 600, image: "https://cdn.bulbagarden.net/upload/b/bf/Dream_Great_Ball_Sprite.png"},
   {name: "Ultra Ball", description: "An ultra-performance Ball that provides a higher Pokémon catch rate than a Great Ball.", price: 800, image: "https://cdn.bulbagarden.net/upload/a/a8/Dream_Ultra_Ball_Sprite.png"},
   {name: "Master Ball", description: "The best Ball with the ultimate level of performance. It will catch any wild Pokémon without fail.", price: 0, image: "https://cdn.bulbagarden.net/upload/9/95/Dream_Master_Ball_Sprite.png"},
-  {name: "Fire Stone", description: "A peculiar stone that makes certain species of Pokémon evolve. It is colored orange.", price: 3000, image: "https://cdn.bulbagarden.net/upload/9/92/Dream_Fire_Stone_Sprite.png"},
-  {name: "Water Stone", description: "A peculiar stone that makes certain species of Pokémon evolve. It is a clear, light blue.", price: 3000, image: "https://cdn.bulbagarden.net/upload/2/29/Dream_Water_Stone_Sprite.png"},
-  {name: "Thunder Stone", description: "A peculiar stone that makes certain species of Pokémon evolve. It has a thunderbolt pattern.", price: 3000, image: "https://cdn.bulbagarden.net/upload/a/a5/Dream_Thunder_Stone_Sprite.png"},
-  {name: "Leaf Stone", description: "A peculiar stone that makes certain species of Pokémon evolve. It has a leaf pattern.", price: 3000, image: "https://cdn.bulbagarden.net/upload/b/b3/Dream_Leaf_Stone_Sprite.png"},
-  {name: "Moon Stone", description: "A peculiar stone that makes certain species of Pokémon evolve. It is as black as the night sky.", price: 5000, image: "https://cdn.bulbagarden.net/upload/3/32/Dream_Moon_Stone_Sprite.png"}
+  {name: "Fire Stone", description: "A peculiar stone that makes certain species of Pokémon evolve. It is colored orange.", price: 3000, image: "https://cdn.bulbagarden.net/upload/9/92/Dream_Fire_Stone_Sprite.png", stone_id: -3},
+  {name: "Water Stone", description: "A peculiar stone that makes certain species of Pokémon evolve. It is a clear, light blue.", price: 3000, image: "https://cdn.bulbagarden.net/upload/2/29/Dream_Water_Stone_Sprite.png", stone_id: -5},
+  {name: "Thunder Stone", description: "A peculiar stone that makes certain species of Pokémon evolve. It has a thunderbolt pattern.", price: 3000, image: "https://cdn.bulbagarden.net/upload/a/a5/Dream_Thunder_Stone_Sprite.png", stone_id: -1},
+  {name: "Leaf Stone", description: "A peculiar stone that makes certain species of Pokémon evolve. It has a leaf pattern.", price: 3000, image: "https://cdn.bulbagarden.net/upload/b/b3/Dream_Leaf_Stone_Sprite.png", stone_id: -4},
+  {name: "Moon Stone", description: "A peculiar stone that makes certain species of Pokémon evolve. It is as black as the night sky.", price: 5000, image: "https://cdn.bulbagarden.net/upload/3/32/Dream_Moon_Stone_Sprite.png", stone_id: -2}
 ])
 
 Item.all.each do |item|
-  Inventory.create(trainer: eric, item: item, quantity: rand(1..10))
+  Inventory.create(trainer: eric, item: item, quantity: rand(5))
 end

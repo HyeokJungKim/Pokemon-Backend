@@ -23,6 +23,6 @@ class Pokeball < ApplicationRecord
   end
 
   def can_evolve?
-    self.pokemon.evolutions.first && self.level > self.pokemon.families.first.level 
+    self.pokemon.evolutions.first && self.level >= self.pokemon.families.first.level 
   end
 end
