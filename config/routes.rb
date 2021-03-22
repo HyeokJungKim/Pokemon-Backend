@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   patch '/inventories', to: 'inventories#buy'
   patch '/trainers/experience', to: 'trainers#experience'
 
-  resources :trainers, only: [:show]
+  resources :trainers, only: [:show, :create]
   resources :pokemons, only: [:index]
   resources :pokeballs, only: [:update]
   resources :inventories, only: [:update]
