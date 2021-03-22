@@ -48,7 +48,6 @@ Organize your box and your team to strategically figure out how to level up your
 curl -sSL https://get.rvm.io | bash
 rvm install 2.6.6
 rvm use 2.6.6
-
 ```
 
 2. Clone down the project and install the dependencies.
