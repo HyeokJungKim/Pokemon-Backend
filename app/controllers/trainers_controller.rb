@@ -1,5 +1,5 @@
 class TrainersController < ApplicationController
-  before_action :check_token, except: [:login]
+  before_action :check_token, except: [:login, :create]
 
   def login
     @trainer = Trainer.find_by(username: trainer_params(:username)[:username])
@@ -11,8 +11,9 @@ class TrainersController < ApplicationController
   end
 
   def create
-    @trainer = Trainer.create(trainer_params(:username, :password))
+    @trainer = Trainer.create(trainer_params(:username, :password).merge({money: 10000}))
     if @trainer.valid?
+      Pokeball.create({trainer: @trainer, pokemon: Pokemon.all.sample, level: 5, position: 1, onTeam: true})
       render json: tokenForAccount(@trainer)
     else
       render json: {error: "Username has been taken"}, status: :bad_request
