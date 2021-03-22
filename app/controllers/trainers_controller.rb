@@ -2,11 +2,20 @@ class TrainersController < ApplicationController
   before_action :check_token, except: [:login]
 
   def login
-    @trainer = Trainer.find_by(username: trainer_params(:username))
-    if(@trainer && @trainer.authenticate(trainer_params(:password)))
+    @trainer = Trainer.find_by(username: trainer_params(:username)[:username])
+    if(@trainer && @trainer.authenticate(trainer_params(:password)[:password]))
       render json: tokenForAccount(@trainer)
     else
       render json: {error: "Invalid Username or Password"}, status: :bad_request
+    end
+  end
+
+  def create
+    @trainer = Trainer.create(trainer_params(:username, :password))
+    if @trainer.valid?
+      render json: tokenForAccount(@trainer)
+    else
+      render json: {error: "Username has been taken"}, status: :bad_request
     end
   end
 
@@ -40,6 +49,6 @@ class TrainersController < ApplicationController
   private
 
   def trainer_params(*args)
-    params.require(:trainer).permit(*args)[*args]
+    params.require(:trainer).permit(*args)
   end
 end
