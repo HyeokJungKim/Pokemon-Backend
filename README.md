@@ -45,9 +45,9 @@ Organize your box and your team to strategically figure out how to level up your
 1. Make sure that `rvm` is installed on your local machine.
 
 ```
-    curl -sSL https://get.rvm.io | bash
-    rvm install 2.6.6
-    rvm use 2.6.6
+curl -sSL https://get.rvm.io | bash
+rvm install 2.6.6
+rvm use 2.6.6
 
 ```
 
