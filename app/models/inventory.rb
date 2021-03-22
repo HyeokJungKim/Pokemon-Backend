@@ -15,7 +15,7 @@ class Inventory < ApplicationRecord
 
   def buy(num)
     self.update!(quantity: self.quantity + num)
-    self.trainer.update!(money: self.trainer.money + num * self.item.price)
+    self.trainer.update!(money: self.trainer.money - num * self.item.price)
   end
 
   def use(num)
