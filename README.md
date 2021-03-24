@@ -57,8 +57,21 @@ rvm use 2.6.6
  cd Pokemon-Backend
 ```
 
-3. Start the app on <http://localhost:4000/>
+3. Download the dependencies and set up the database.
+```
+bundle install
+rails db:create
+rails db:setup
+```
+
+4. Create an .ENV file in the root directory
+```
+PASSWORD=<PASSWORD FOR JWT>
+REDISTOGO_URL=<URL FOR REDIS TO GO: https://redistogo.com/documentation>
+```
+
+5. Change the origins in `./config/initializers/cors.rb` to the appropriate port for the corresponding frontend.
+6. Run the server on port 4000
 ```
 rails s -p 4000
 ```
-
