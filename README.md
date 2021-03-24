@@ -7,7 +7,7 @@ If you would like to explore the app without creating an account, please feel fr
 
 ```
 Username: Trainer
-Password: abc132
+Password: abc123
 ```
 
 ## Language and Tools
