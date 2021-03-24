@@ -12,7 +12,7 @@ Password: abc123
 
 ## Language and Tools
 
-### React 
+### [React](https://github.com/HyeokJungKim/Pokemon-Frontend)
 - [React-Router](https://reactrouter.com/) - [Example](https://github.com/HyeokJungKim/Pokemon-Frontend/blob/master/src/App.js#L40)
 - [Semantic UI React](https://react.semantic-ui.com/) - [Example](https://github.com/HyeokJungKim/Pokemon-Frontend/blob/master/src/Containers/HomeContainer.js#L4)
 - [React Beautiful DND](https://github.com/atlassian/react-beautiful-dnd) - [Example](https://github.com/HyeokJungKim/Pokemon-Frontend/blob/master/src/Containers/TeamContainer.js#L54)
@@ -21,7 +21,7 @@ Password: abc123
 - [Redux](https://redux.js.org/) - [Example](https://github.com/HyeokJungKim/Pokemon-Frontend/blob/master/src/index.js#L18)
 - [Redux-Thunk](https://github.com/reduxjs/redux-thunk) - [Example](https://github.com/HyeokJungKim/Pokemon-Frontend/blob/master/src/Redux/Actions.js#L5)
 
-### [Rails API](https://github.com/HyeokJungKim/Pokemon-Backend)
+### Rails API
 - [Redis](https://github.com/redis-store/redis-rails) - [Example](https://github.com/HyeokJungKim/Pokemon-Backend/blob/master/app/controllers/pokemons_controller.rb#L3)
 - [JWT](https://jwt.io/) - [Example](https://github.com/HyeokJungKim/Pokemon-Backend/blob/master/app/controllers/application_controller.rb#L10)
 - [Fast JSONAPI](https://github.com/Netflix/fast_jsonapi) - [Example](https://github.com/HyeokJungKim/Pokemon-Backend/blob/master/app/serializers/trainer_serializer.rb#L1)
