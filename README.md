@@ -5,7 +5,7 @@ Explore Online: <https://pokemon-stay.netlify.app/>
 
 If you would like to explore the app without creating an account, please feel free to use the following credentials to login:
 
-```
+```txt
 Username: Trainer
 Password: abc123
 ```
@@ -24,6 +24,7 @@ Password: abc123
 
 ### Rails API
 - [Redis](https://github.com/redis-store/redis-rails)
+- [JWT](https://jwt.io/)
 - [Postgres](https://www.postgresql.org/)
 - [Fast JSONAPI](https://github.com/Netflix/fast_jsonapi)
 
@@ -62,6 +63,3 @@ rvm use 2.6.6
 rails s -p 4000
 ```
 
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
